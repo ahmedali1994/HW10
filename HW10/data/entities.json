@@ -1,0 +1,40 @@
+{
+  "Cars": [
+
+    {
+      "Car": "Ford, mustang GT",
+      "Color": "Black",
+      "Date": "1970",
+      "engine power": "V-8 250hp",
+      "Image": "image/FordMustang.jpg"
+    },
+    {
+      "Car": "BMW, i8",
+      "color": "White",
+      "Date": "2018",
+      "engine power": "V-3, 228 hp",
+      "Image": "image/bmw.jpg"
+    },
+    {
+      "Car": "Ferrari 458",
+      "color": "Yellow",
+      "Date": "2015",
+      "engine power": "V8, 570 hp",
+      "Image": "image/ferrari.jpg"
+    },
+      {
+      "Car": "Mercedes-Benz CLS550",
+      "color": "White",
+      "Date": "2012",
+      "engine power": "V8, 300 hp",
+      "Image": "image/mercedes.jpg"
+    },
+      {
+      "Car": "Jeep Wrangler",
+      "color": "Dark green",
+      "Date": "2018",
+      "engine power": "V6, 285 hp",
+      "Image": "image/jeep.jpg"
+    }
+  ]
+}

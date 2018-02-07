@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+    
+    
+    
+<head>
+    <title>Ahmed Abdulrazzaq</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+    
+    <body class="bac">
+    <nav class="navcolor navbar navbar-default">
+  <div class="loon container-fluid">
+      <img class="logo" src="image/twitter-icon--birdies-iconset--arrioch-33.png"/>
+      <input class="serach-box" type="text" name="serach" placeholder=" Serach" size="30" required/>
+       <input class="serach-box" type="image" src="image/search-icon-png-22.png" width="30" height="30" />
+    <div class="navbar-header">
+      
+        
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=" blue"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+        
+        <div class="section2">
+            <img class="profileimg" src="image/My%20pic.jpg"/>
+            
+            
+        </div>
+        <div class="mean-box">
+    <div class="first box">
+    <h1>About me</h1>
+        <p class="mybio">My name is Ahmed Abdulrazzaq, I am a computer programming student at the Cleveland codes program. Computers were my passion since I was 16 years old. I am also a sports fan, My favorite sport is soccer and my favorite team is Real Madrid. I also love fishing and exercising. I was born in Baghdad, Iraq and raised in Tripoli. <br/> I am a young professional with strong analytical and problem-solving skills. I have demonstrated excellent time management and organizational skills in my previous positions. I have an ability to communicate effectively with a diverse population. Customer service is my number one focus. These personal qualifications paired with my technical skills make me a very strong candidate for a career in software development field.</p>
+    </div>
+    <div class="second box">
+    <h1>Countries I've visited</h1>
+        <ul id="contries">
+            <li>Syria</li>
+            <li>Morocco</li>
+            <li>Jordan</li>
+            <li>Saudi Arabia</li>
+            <li>Tunisia</li>
+            <li>Canada</li>
+        
+        </ul>
+    </div>
+        <div class="third box">
+            
+    <img class="col3" src="image/c3b6bd194e00684b8fc6d79ea9d1f2c9.png"/>
+        
+    </div>
+        </div>
+
+        <button id="bttn" type="button" onclick="loadDoc()">See my favorite things</button>
+
+        <div id="Databox" ></div>
+    
+    
+    <script>
+        debugger;
+        function loadDoc() {
+
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function () {
+                if (xhttp.status === 200) {
+                    responseObject = JSON.parse(xhttp.responseText);
+                    var newContent = '';
+                    for (var i = 0; i < responseObject.Cars.length; i++) {
+                        newContent += '<div class="event">';
+                        newContent += '<img class="Cimg" src="' + responseObject.Cars[i].Image + '" ';
+                        newContent += 'alt="' + responseObject.Cars[i].Car + '"/>';
+                        newContent += '<p class="Pcolor"><b>' + responseObject.Cars[i].Car + '</b><br>';
+                        newContent += responseObject.Cars[i].Date + '</p>';
+                        newContent += '</div>';
+
+                    }
+                    document.getElementById('Databox').innerHTML = newContent;
+
+                };
+            }
+            xhttp.open('GET', 'data/entities.json', true);
+            xhttp.send(null);
+        }
+        
+    </script>
+</body>
+</html>
